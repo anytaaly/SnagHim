@@ -1,0 +1,90 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{ title }}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        {{!-- INDEX.CSS STYLE FILE --}}
+        <link rel="stylesheet" href="/css/index.css" type="text/css"/>
+
+        {{!-- MATERILIAZE CSS STYLE FILE --}}
+        <link rel="stylesheet" href="/css/materialize.css" type="text/css"/>
+
+        {{!-- BOOTSTRAP STYLE FILE --}}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        {{!-- GOOGLE FONTS --}}
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+        {{!-- MATERIALIZE ICONS  --}}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        {{!-- JQUERY CDN  --}}
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        
+        {{!-- BOOTSTRAP JQUERY --}}
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+        
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <body>
+        <div class='container'>
+    
+    
+    <h1> <img src="/images/logo7.png" alt="logo" id='landing_header'></h1>
+    
+    <h1 id='title'>{{title}}</h1>
+    
+    
+    <p id='titleText'>Welcome to {{title}}</p>
+   
+    {{#if errors}}
+        {{#each errors}}
+        <div class='alert alert-danger'>
+            {{this.msg}}
+        </div>
+        {{/each}}
+    {{/if}}
+    
+
+    
+    <form method='POST' action='/login' id='sign_in_form'>
+        
+        <div class="row">
+            <div class='input-field col s12'>
+                <i class="material-icons prefix">account_circle</i>
+                <input type="text" name='username' class="form-control" id="InputUserName" >
+                <label for="username">User Name</label> 
+           </div>
+        </div>
+        
+
+        <div class="row">
+            <div class='input-field col s12'>
+                <i class="material-icons prefix">lock</i>
+                <input type="password" name='password' class="form-control" id="InputPassword">
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">LOGIN </button> 
+        <button class="btn btn-primary"> <a href='/register' id='login-button'> NEW USER </a> </button> 
+        
+    </form>
+
+</div>
+
+
+{{> footer-end }}

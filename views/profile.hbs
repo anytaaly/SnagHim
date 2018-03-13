@@ -1,0 +1,50 @@
+{{> header }}
+
+<div class="container" id='body'> 
+
+{{!-- PROFILE DIV--}}
+  <div class='row' id='profile-image'>
+    <img src="/images/profile.jpg" alt="profile images">
+  </div> 
+  <br>
+  <button id="edit_profile_button" type="button">Edit</button>
+  <div class='row'> 
+  </div>
+
+  <div class="users-details">
+    <h3>  <i class="material-icons">face</i> Name: Rhett Link </h3> 
+    <h3> <i class="material-icons">location_on</i>  Location: Dallas, TX </h3>
+    <button class="btn btn-primary btn-lg"> <i class="material-icons">loyalty</i>  Snag Him! {{User.location}} </button>
+  </div>
+        
+	<div class = "profile_info" id="about_me">
+	  <h3>About Me</h3>
+    <p> I’ll admit it, I’m a little old-fashioned when it comes to my dating style. I open doors and like to go for drinks AND dinner on the first date. But it’s all part of what makes me a gentleman. I’m looking for someone who is always up for life’s adventures but doesn’t mind staying in and watching a movie when the weather calls for it. I’m a sucker for dogs. I rescued a lab a few years back and we’ve been best pals ever since. I try to eat healthy but I have a major weakness for pizza. Let me know if you want to go get a slice!</p>
+	  {{!-- <p>{{user.user_profile[0].description}}</p> --}}
+  </div>
+
+	<div class = "profile_info" id="interests">
+		<h3>Interests</h3>
+    <ul>
+      <li> Long walk on a beach. </li>
+      <li> playing with puppies. </li>
+    </ul>		
+	</div>	
+  <div class='friends'> 
+        
+    <h3> People you might be interested in: </h3>
+    <img src="/images/friend1.jpg" alt="" class ='friends'>
+    <img src="/images/friend2.jpg" alt="" class ='friends'>
+    <img src="/images/friend3.jpg" alt="" class ='friends'>
+     <img src="/images/friend4.jpg" alt="" class ='friends'>
+    <img src="/images/friend5.jpg" alt="" class ='friends'>
+    <img src="/images/friend1.jpg" alt="" class ='friends'>
+  </div>
+     
+
+	<div style="display:none" id="edit_profile_form_container">
+	  <form id="edit_profile_form">
+	</div>
+
+</div> <!-- container --> 
+{{> footer-end }}

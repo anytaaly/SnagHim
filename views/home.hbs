@@ -1,0 +1,23 @@
+{{> header }}
+
+
+          <div class="container"> 
+          
+          {{!-- PROFILE DIV--}}
+          <div class='row' id='profile-image'>
+              <img src="/images/profile.jpg" alt="profile images">
+          </div> 
+
+          <div class='row'> 
+            <br>
+          </div>
+
+          <div class="users-details">
+            {{!-- <h3>Welcome {{> user}}</h3> --}}
+            <h3>  <i class="material-icons">face</i> Name: {{user.name}} </h3> 
+            <h3> <i class="material-icons">location_on</i>  Location: {{User.location}} </h3>
+            <button class="btn btn-primary btn-lg"> <i class="material-icons">loyalty</i>  Snag Him! {{User.location}} </button>
+         </div>
+
+
+{{> footer-end }}

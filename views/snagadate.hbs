@@ -1,0 +1,132 @@
+{{> header }}
+
+<div class="container"> 
+          
+  {{!-- PROFILE DIV--}}
+  <div class='row' id='profile-image'>
+      <img src="/images/profile.jpg" alt="profile images">
+  </div> 
+
+  <div class='row'> 
+    <br>
+  </div>
+
+  <div class="users-details">
+      <i class="material-icons">face</i> Name: {{User.name}} </h3> 
+    <h3> <i class="material-icons">location_on</i>  Location: {{User.location}} </h3>
+    <input type="submit" label='Snag him'>
+    <button>  Snag Him! </button>
+  </div>
+        
+        
+  <h2> {{title}} </h2>
+
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+  <h1 class="display-3">Snag Someone</h1>
+  <div class="row">
+      <div class="col-lg-12">
+          <form>
+              <div class="form-group">
+                  <label for="gender">Snagging who?</label>
+                  <select class="form-control" id="gender">
+                      <option value="">Select gender</option>
+                      <option value="male">Men</option>
+                      <option value="female">Women</option>
+                  </select>
+              </div>
+          </form>
+      </div>
+      <div class="row">
+      <form role="form" class="col-md-6">
+          <button type="submit" class="btn btn-primary submit">Submit</button>
+      </form>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+        <div id="dates"></div>
+    </div>
+  </div>
+</div>
+
+<br>
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Snagged!!</h4>
+            </div>
+            <div class="modal-body">
+                <p>Lets see if they respond!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+    <script type="text/javascript">
+    for (let i = 0; i < 50; i++) {
+      $.ajax({
+        url: 'https://randomuser.me/api?results=50',
+        dataType: 'json',
+        success: function (data) {
+            console.log(JSON.stringify(data.results[i].name));
+              console.log(JSON.stringify(data.results[i].gender));
+            console.log(JSON.stringify(data.results[i].picture.large));
+            // $("#dates").append("<div id= 'person'>" + data.results[i].name.first + "</div>");
+            
+              var gender = data.results[i].gender;
+            if (gender === "male") {
+                $("#dates").append("<img id= 'men' draggable='true' ondragstart='drag(event)' src=" + data.results[i].picture.large + ">");
+            } else if (gender === "female") {
+                $("#dates").append("<img id= 'women' draggable='true'  ondragstart='drag(event)' src=" + data.results[i].picture.large + ">");
+            }
+        }
+    });      
+    }
+
+
+    $(".submit").on("click", function (event) {
+      event.preventDefault();
+        var filter = $("#gender").val();
+        if (filter === "male") {
+            $('img').remove('#women');
+        } else if (filter === "female") {
+            $('img').remove('#men');
+        }
+    });
+
+    function allowDrop(ev) {
+          ev.preventDefault();
+          $('#drop').empty();
+          
+      }
+
+      function drag(ev) {
+          ev.dataTransfer.setData("text", ev.target.id);
+        
+      }
+
+      function drop(ev) {
+          ev.preventDefault();
+          var data = ev.dataTransfer.getData("text");
+          
+          ev.target.appendChild(document.getElementById(data));
+          $('#myModal').modal('show');
+          
+      } 
+    </script>
+{{> footer-end }}

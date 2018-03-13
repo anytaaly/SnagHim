@@ -1,0 +1,74 @@
+{{> header }}
+
+<div class="container"> 
+          
+          {{!-- PROFILE DIV--}}
+          <div class='row' id='profile-image'>
+              <img src="/images/profile.jpg" alt="profile images">
+          </div> 
+
+          <div class='row'> 
+            <br>
+          </div>
+
+          <div class="users-details">
+            <h3>  <i class="material-icons">face</i> Name: {{User.name}} </h3> 
+            <h3> <i class="material-icons">location_on</i>  Location: {{User.location}} </h3>
+            <h3> <i class="material-icons">loyalty</i>  Snag Him! {{User.location}} </h3>
+         </div>
+        
+        
+        <h2> {{title}} </h2>
+        <form method='POST' action='/register-event' id='create_event_form'>
+          <div class="row">
+              <div class='input-field col s12'>
+                  <i class="material-icons prefix">favorite_border</i>
+                  <input type="text" name='event' class="form-control" id="event-title" >
+                  <label for="event">EVENT TITLE </label> 
+            </div>
+          </div>
+
+          <div class="row">
+              <div class='input-field col s12'>
+                  <i class="material-icons prefix">location_on</i>
+                  <input type="text" name='location' class="form-control" id="location" >
+                  <label for="location">LOCATION </label> 
+            </div>
+          </div>
+
+
+          <div class="form-row">
+            <div class="col">
+              <i class="material-icons prefix">perm_contact_calendar</i>
+              <label for="location"> WHEN </label> 
+              <input type="date" class="form-control" placeholder="10/14/2015">
+            </div>
+            <div class="col">
+              <i class="material-icons prefix">watch_later</i>
+              <label for="location"> STARTS </label> 
+              <input type="time" class="form-control" placeholder="06:00PM">
+            </div>
+            <div class="col">
+              <i class="material-icons prefix">do_not_disturb_off</i>
+              <label for="ends">ENDS </label> 
+              <input type="time" class="form-control" placeholder="9:00PM">
+            </div>
+          </div>
+          
+          <div class="row">
+  
+                  <i class="material-icons prefix">location_on</i>
+                  <label for="interested">WHAT WILL MAKE YOU SWOON? </label> 
+                  <textarea>Lots of conversation and laughter. </textarea>                  
+            
+          </div>
+          
+          <button type="submit" class="btn btn-primary">CREATE </button>
+          <button type="submit" class="btn btn-primary">CANCEL </button>
+        </form>
+
+
+        </div> <!-- container --> 
+
+
+        {{> footer-end }}

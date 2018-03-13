@@ -1,0 +1,110 @@
+body{
+	background-image: url("/images/bg.jpg");
+	background-size: cover;
+	background-repeat:no-repeat;
+	background-color: #6500cd; 
+	margin: 0;
+	  
+}
+
+#title{
+	color:white;
+	font-size: 25px; 
+	font-family: 'Raleway', sans-serif;
+}
+
+
+
+footer{
+	background-color: #6500cd;
+}
+
+#titleText{
+
+	color:white;
+	font-size: 15px; 
+	font-family: 'Raleway', sans-serif;
+}
+
+#landing_header{
+	margin:auto; 
+	margin-top:20px;
+	width: 500px; 
+}
+
+button{
+	background-color:orange;
+
+ }
+h2{
+	font-family: 'Josefin Sans', sans-serif;
+	color:white;
+	font-size:15px; 
+}
+
+#form-head{
+	color:white;
+	font-size: 20px; 
+}
+#sign_up_div,#sign_in_div{
+	width: 50%;
+	float: left;
+	padding-top: 10%;
+	color:white; 
+}
+#sign_up_form,#sign_in_form{
+	width: 50%;
+    height:200px;
+    margin: auto;
+    color:white;
+}
+
+#sign_up_form input{
+	float: left;
+	clear:both;
+	margin-top: 20px;
+	height: 40px;
+	color:white;
+}
+
+#sign-up-button {
+	float:left;
+	clear:both;
+	margin-top: 25px;
+	margin-left: 35%;
+	padding: 0px;
+	width: 100px;
+	color:white;
+	background-color: #6500cd; 
+}
+#sign-in-button {
+	float:left;
+	clear:both;
+	margin-top: 25px;
+	margin-left: 35%;
+	padding: 0px;
+	background-color: #6500cd; 
+	color:white; 
+	width: 100px;
+}
+
+
+
+#sign_in_form input{
+	float: left;
+	margin-top: 20px;
+	height: 40px;
+}
+
+#sign_in_form input[type=button]{
+	clear: left;
+	width: 100px;
+	margin-left: 35%;
+	height:30px;
+	background-color: #ff671b; 
+} 
+
+#login-button {
+	text-decoration: none; 
+	color: white; 
+}
